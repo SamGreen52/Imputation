@@ -1,0 +1,13 @@
+1)sbatch Imputation-preptool_bed-to-plink-commands.sh
+  Files: 
+        -PLINK Binary (BED, BIM, and FAM)
+          a. HG38: chr should be in this format, "chr1"
+          b. HG19: chr should be in this format, "1" 
+        -HRC-1000G-check-bim-v4.2.13-NoReadKey.zip/pl
+        -1000GP_Phase3_combined.legend.gz
+
+2) sbatch Run-plink.sh
+  -NOTE: May need to add the following in the beginning to the script before  #!/bin/sh"
+
+4) sbatch Run-plink.sh
+
