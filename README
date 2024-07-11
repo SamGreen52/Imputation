@@ -1,13 +1,30 @@
 1)sbatch Imputation-preptool_bed-to-plink-commands.sh
   Files: 
         -PLINK Binary (BED, BIM, and FAM)
-          a. HG38: chr should be in this format, "chr1"
-          b. HG19: chr should be in this format, "1" 
+          NOTE: if in HG38, apply these changes after step 3! 
+                a. HG38: chr should be in this format, "chr1"
+                b. HG19: chr should be in this format, "1" 
         -HRC-1000G-check-bim-v4.2.13-NoReadKey.zip/pl
         -1000GP_Phase3_combined.legend.gz
 
 2) sbatch Run-plink.sh
-  -NOTE: May need to add the following in the beginning to the script before  #!/bin/sh"
+  -NOTE: May need to add the following in the beginning to the script before  
+      #!/bin/sh
+      module load PLINK/1.9b_6.21-x86_64
 
-4) sbatch Run-plink.sh
+
+3) for file in FINAL_OCD-updated-chr*.vcf; do
+    output_file="${file/updated/output}"
+    awk 'BEGIN {OFS="\t"} { if ($1 !~ /^#/) $1 = "chr" $1; print }' "$file" > "$output_file"
+    echo "Processed $file -> $output_file"
+done
+
+
+4) sbatch gzip_updated-chromosome-vcf-files.sh
+  NOTE: Apply HG38 format here by adding the following line to the script: 
+      awk '{ if ($1 !~ /^#/) $1 = "chr" $1 } 1' FINALP+P.QC-updated-chr$chr.vcf > FINALP+P.QC-outputupdated-chr$chr.vcf
+
+
+
+
 
