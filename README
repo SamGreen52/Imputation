@@ -1,6 +1,6 @@
-################################## IMPUTATION  ##################################
+####################################################### IMPUTATION  ###########################################
 
-NOTE: 
+NOTES: 
   -Run step 1-4 in the same directory
 1) Run in terminal:sbatch Imputation-preptool_bed-to-plink-commands.sh
   Files: 
@@ -16,15 +16,29 @@ NOTE:
       #!/bin/sh
       module load PLINK/1.9b_6.21-x86_64
 
-
 3) Run in terminal: sbatch gzip_updated-chromosome-vcf-files.sh
 
 4) Run in terminal to move all files with vcf.gz into a seperate directory: mv *.vcf.gz Results/
 
-
 5) Upload imputation files to topmed or michigan imputation server. Use code provided by server to download individual imputation and log files
+  -PARAMETERS TO DETERMINE: 
+    Samples: 1221
+  Chromosomes: 1 10 11 12 13 14 15 16 17 18 19 2 20 21 22 3 4 5 6 7 8 9
+  SNPs: 141848
+  Chunks: 154
+  Datatype: unphased
+  Build: hg19
+  Reference Panel: apps@1000g-phase-1 (hg19)
+  Population: eur
+  Phasing: eagle
+  Mode: imputation
+  Rsq filter: 0.3
+  
+6) Run in terminal: sbatch run_unzip_imputedchr.sh
+  -NOTE: 
+    -Update password in script. Typically provided in email by the server after imputation is completed 
 
-6)
+7) 
 
 
 
