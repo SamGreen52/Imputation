@@ -34,11 +34,24 @@ NOTES:
   Mode: imputation
   Rsq filter: 0.3
   
-6) Run in terminal: sbatch run_unzip_imputedchr.sh
+6) Run in terminal: sbatch run_unzip_imputedchr.sh and then:  mv vcf.gz* Results/
   -NOTE: 
     -Update password in script. Typically provided in email by the server after imputation is completed 
 
-7) 
+7) Run in terminal: sbatch run_plink_vcftobed.sh
+  -NOTE: 
+    -Modify directory path as necessary prior to running script
+
+8)  Run in terminal: run_modify_famfile.sh
+  -NOTE: 
+    -Modify directory path as necessary prior to running script
+
+########## WARNING: DISORDER SPECIFIC FOR PLINK FILES ##########
+-All further steps will be done in the individual folders of specific disorders. All of these folders are/should be contained in a directory 
+titled "GWAS_Specific" 
+
+9)
+
 
 
 
