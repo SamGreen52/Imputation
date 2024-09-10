@@ -67,7 +67,9 @@ NOTES:
   make
 
 -Running dosage converter: 
-
+  In pathway /gpfs/gibbs/project/olfson/srg52/Project_3_Emily/Target/TARGET/Imputation/Wang/Step_7-PostImpute/DosageConvertor/DosageConvertor/build, run in terminal: 
+    Sbatch dosage.sh
+    
 
 
 
