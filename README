@@ -38,6 +38,39 @@ NOTES:
   -NOTE: 
     -Update password in script. Typically provided in email by the server after imputation is completed 
 
+7) Michigan server does make the mistake of making the SNP names too long. Will need to run dosage converter: 
+  -Dosage converter set up in Mccleary: 
+
+  ​###request compute node###
+​  salloc -c 4 -t 4:00:00 --mem=32G
+
+  ​###build environment
+  module load miniconda
+
+  ​conda create -n dosageconvertor python=3.8.* cget
+
+  conda activate test
+
+  #####build dosage converter
+  ​git clone https://github.com/Santy-8128/DosageConvertor
+
+  cd DosageConvertor
+
+  cget install -f ./requirements.txt
+
+  mkdir build
+
+  cd build
+
+  cmake -DCMAKE_TOOLCHAIN_FILE=../cget/cget/cget.cmake ..
+
+  make
+
+-Running dosage converter: 
+
+
+
+
 7) Run in terminal: sbatch run_plink_vcftobed.sh
   -NOTE: 
     -Modify directory path as necessary prior to running script
