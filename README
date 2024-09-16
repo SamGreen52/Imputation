@@ -71,8 +71,6 @@ NOTES:
     Sbatch dosage.sh
     
 
-
-
 7) Run in terminal: sbatch run_plink_vcftobed.sh
   -NOTE: 
     -Modify directory path as necessary prior to running script
@@ -85,7 +83,16 @@ NOTES:
 -All further steps will be done in the individual folders of specific disorders. All of these folders are/should be contained in a directory 
 titled "GWAS_Specific" 
 
-9)
+9) Choose the specific disorder you want to analyze. In Rstudio, run the following script "match_BIMtoGWAS_rsIDs.R" 
+and modify as needed to accomodate. 
+
+10) Run in terminal:  sbatch mergechrom-plink.sh
+  -This will merge plink chromosome files together
+
+11)Run the following command in the terminal to remove duplicates: 
+  module load PLINK/2_avx2_20221024
+  plink2 --bfile Ocd_Wang_Impute --make-bed --rm-dup --out Results/Ocd_Wang_Impute_nodup
+
 
 
 
