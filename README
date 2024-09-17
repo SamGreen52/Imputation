@@ -94,7 +94,6 @@ and modify as needed to accomodate.
   plink2 --bfile Ocd_Wang_Impute --make-bed --rm-dup --out Results/Ocd_Wang_Impute_nodup
 
 
-
-
+12) You can now run PRSice or PRSCS on your imputed file!
 
 
