@@ -1,15 +1,20 @@
 ####################################################### IMPUTATION  ###########################################
-
 NOTES: 
   -Run step 1-4 in the same directory
+  -Helpful website for workflow : https://imputationserver.readthedocs.io/en/latest/prepare-your-data/
 1) Run in terminal:sbatch Imputation-preptool_bed-to-plink-commands.sh
   Files: 
         -PLINK Binary (BED, BIM, and FAM)
           NOTE: if in HG38, apply these changes after step 3! 
                 a. HG38: chr should be in this format, "chr1"
                 b. HG19: chr should be in this format, "1" 
+        HG19: 
         -HRC-1000G-check-bim-v4.2.13-NoReadKey.zip/pl
         -1000GP_Phase3_combined.legend.gz
+        download: https://www.chg.ox.ac.uk/~wrayner/tools/1000GP_Phase3_combined.legend.gz
+        HG38: 
+        -1000GP_Phase3_combined.vcf.gz
+            Download: https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/
 
 2)Run in terminal: sbatch Run-plink.sh
   -NOTE: May need to add the following in the beginning to the script before  
