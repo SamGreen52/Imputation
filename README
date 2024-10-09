@@ -39,7 +39,8 @@ NOTES:
   Mode: imputation
   Rsq filter: 0.3
   
-6) Run in terminal: sbatch run_unzip_imputedchr.sh and then:  mv vcf.gz* Results/
+6) Run in terminal: sbatch run_unzip_imputedchr.sh and then: mv *dose.vcf.gz Results/
+
   -NOTE: 
     -Update password in script. Typically provided in email by the server after imputation is completed 
 
